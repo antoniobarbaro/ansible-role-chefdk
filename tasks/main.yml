@@ -1,0 +1,18 @@
+---
+# tasks file for chefdk
+- name: Install chef repository
+  yum_repository:
+    name: chef
+    description: chef repository
+    baseurl: https://packages.chef.io/repos/yum/stable/el/7/x86_64
+    gpgkey: https://packages.chef.io/chef.asc
+    gpgcheck: yes
+    enabled: yes
+
+- name: install chefdk
+  yum:
+    name: chefdk
+    state: latest
+    update_cache: yes
+
+
